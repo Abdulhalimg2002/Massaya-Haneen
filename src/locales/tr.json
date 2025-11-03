@@ -1,0 +1,104 @@
+{
+  "welcome": "Massaya Haneen Salonu'na Hoş Geldiniz",
+  "selectLanguage": "Devam etmek için lütfen tercih ettiğiniz dili seçin",
+  "arabic": "العربية",
+  "turkish": "Türkçe",
+  "home": {
+    "welcomeTo": "Hoş geldiniz",
+    "massayaHaneen": "Massaya Haneen",
+    "discoverBeauty": "Güzelliği, tarzı ve lüks bakımı keşfedin. Premium hizmetlerimizle gününüzü daha parlak hale getirin.",
+    "bookAppointment": "Randevunuzu Ayırın",
+    "aboutUs": "Hakkımızda",
+    "aboutText1": "Massaya Haneen Salonu'nda güzelliğin sadece görünüşten ibaret olmadığını düşünüyoruz. Misyonumuz, doğal parlaklığınızı ortaya çıkaran premium bakım, uzman stil ve rahatlatıcı bir deneyim sunmaktır.",
+    "aboutText2": "Saç bakımlarından cilt bakımına kadar, kendinizi güvenilir ve yenilenmiş hissetmeniz için çeşitli hizmetler sunuyoruz. Güzellik yolculuğunuz burada başlıyor!",
+    "readMore": "Daha Fazla Oku",
+    "ourServices": "Hizmetlerimiz",
+    "ourWorks": "Çalışmalarımız",
+    "seeMore": "Daha Fazla Gör",
+    "contactUs": "Bize Ulaşın",
+    "sendViaWhatsApp": "WhatsApp Üzerinden Gönder",
+    "name": "İsim",
+    "message": "Mesaj",
+    "namePlaceholder": "Adınızı girin",
+    "messagePlaceholder": "Mesajınızı girin",
+    "unmute": "Sesi Aç",
+    "mute": "Sesi Kapat"
+  },
+  "navbar": {
+    "home": "Ana Sayfa",
+    "aboutUs": "Hakkımızda",
+    "ourWork": "Çalışmalarımız",
+    "bookAppointment": "Randevu Al"
+  },
+  "footer": {
+    "quickLinks": "Hızlı Bağlantılar",
+    "home": "Ana Sayfa",
+    "aboutUs": "Hakkımızda",
+    "ourWorks": "Çalışmalarımız",
+    "contact": "İletişim",
+    "followUs": "Bizi Takip Edin",
+    "copyright": "© {{year}} Massaya Haneen Salonu. Tüm hakları saklıdır."
+  },
+  "booking": {
+    "title": "Randevu Alın",
+    "Name": "İsim",
+    "Service": "Hizmet",
+    "Date": "Tarih",
+    "How many people (optional)": "Kişi sayısı (isteğe bağlı)",
+    "searchServices": "Hizmetlerde ara...",
+    "noServicesFound": "Hizmet bulunamadı.",
+    "submit": "Gönder",
+    "cancel": "İptal",
+    "namePlaceholder": "Adınızı girin",
+    "datePlaceholder": "Tarih ve saat seçin",
+    "numberofPPlaceholder": "1",
+    "messageTemplate": "✨ *Yeni Randevu Talebi* ✨\nİsim: {name}\nHizmetler: {services}\nTarih: {date}\nKişiler: {people}"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "welcome": "Massaya Haneen'e Hoş Geldiniz",
+    "text1": "Massaya Haneen Salonu'nda güzelliğin sadece görünüşten ibaret olmadığını düşünüyoruz. Misyonumuz, doğal parlaklığınızı ortaya çıkaran premium bakım, uzman stil ve rahatlatıcı bir deneyim sunmaktır. Profesyonel ekibimiz her ziyareti unutulmaz ve benzersiz kılmaya kararlıdır.",
+    "text2": "Saç bakımlarından cilt bakımına kadar, kendinizi güvenilir ve yenilenmiş hissetmeniz için çeşitli hizmetler sunuyoruz. Güzellik yolculuğunuz burada başlıyor!",
+    "bookAppointment": "Randevunuzu Ayırın",
+    "unmute": "Sesi Aç",
+    "mute": "Sesi Kapat"
+  },
+  "ourWork": {
+    "title": "Çalışmalarımız",
+    "all": "Tümü",
+    "hairStyling": "Saç Stil",
+    "makeup": "Makyaj",
+    "hairProtein": "Saç Proteini Tedavisi",
+    "skinCleansing": "Cilt Temizleme",
+    "fillersBotox": "Dolgu ve Botoks",
+    "prev": "Önceki",
+    "next": "Sonraki"
+  },
+  "services": {
+    "hairStyling": {
+      "name": "Saç Stil",
+      "description": "Modern saç kesimleri, boyama ve stil."
+    },
+    "makeup": {
+      "name": "Makyaj",
+      "description": "Düğünler ve etkinlikler için profesyonel makyaj."
+    },
+    "hairProtein": {
+      "name": "Saç Proteini Tedavisi",
+      "description": "Saçınızın gücünü ve parlaklığını premium protein tedavisimizle geri kazanın — düz, ipek gibi ve kıvırcık olmayan saç garantili."
+    },
+    "skinCleansing": {
+      "name": "Cilt Temizleme",
+      "description": "Derinizi derin temizleme tedavisimizle yenileyin, pürüzsüz, parlak ve sağlıklı bir görünüm için."
+    },
+    "fillersBotox": {
+      "name": "Dolgu ve Botoks",
+      "description": "Saçınızı derin beslenme ile canlandırın — her dokunuşta daha düz, daha dolu ve sağlıklı teller."
+    },
+    "moroccanBath": {
+      "name": "Fas Hamamı",
+      "description": "Derin rahatlama ve parlak cilt deneyimi yaşayın geleneksel Fas hamamımızla — temizlik, peeling ve yenilenmenin mükemmel karışımı."
+    },
+    "price": "300TL"
+  }
+}
