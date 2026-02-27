@@ -1,4 +1,4 @@
-"use client";
+
 
 import type { VideoAudioContextType } from "@/interface";
 import { createContext, useContext, useState } from "react";
