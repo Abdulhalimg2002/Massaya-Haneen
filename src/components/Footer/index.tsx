@@ -40,21 +40,43 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3 text-center sm:text-left">{t("footer.contact")}</h3>
-          <ul className="space-y-2 text-sm text-white/90">
-            <li className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-1 sm:gap-2">
-              <Phone className="w-5 h-5 sm:w-4 sm:h-4 text-white" />
-              <span className="text-center sm:text-left">+90 555 055 0573</span>
-            </li>
-            <li className="flex flex-col sm:flex-row items-center sm:items-start justify-center sm:justify-start gap-1 sm:gap-2">
-             <MapPin className="w-6 h-6 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-6 lg:h-6 text-white" />
-              <span className="text-center sm:text-left">
-                Merkez, Menekşe Sk. Avcılar/İstanbul
-              </span>
-            </li>
-          </ul>
-        </div>
+       <div>
+  <h3 className="text-lg font-semibold text-white mb-3 text-center sm:text-left">
+    {t("footer.contact")}
+  </h3>
+
+  <ul className="space-y-3 text-sm text-white/90">
+    
+    {/* Phone */}
+    <li>
+      <a
+        href="https://wa.me/905550550573"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center sm:justify-start gap-2 hover:text-white transition"
+      >
+        <Phone className="w-5 h-5 text-white shrink-0" />
+        <span>+90 555 055 0573</span>
+      </a>
+    </li>
+
+    {/* Location */}
+    <li>
+      <a
+        href="https://www.google.com/maps/place/Cihangir,+Menek%C5%9Fe+Sk.,+34310+Avc%C4%B1lar%2F%C4%B0stanbul/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center sm:justify-start gap-2 hover:text-white transition text-center sm:text-left"
+      >
+        <MapPin className="w-5 h-5 text-white shrink-0" />
+        <span>
+          Merkez, Menekşe Sk. Avcılar/İstanbul
+        </span>
+      </a>
+    </li>
+
+  </ul>
+</div>
 
         {/* Social Media */}
         <div>

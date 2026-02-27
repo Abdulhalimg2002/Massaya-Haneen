@@ -3,104 +3,137 @@ import { WorkCategory, type BookingF, type contactF, type ourW, type Srvice } fr
 export const srvicelist:Srvice[]=[
     {
         Sname:"services.hairStyling.name",
-        imag:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3lAOLFqH_VKzBVgngnkYWHjw99VZ0zW6UnxDN7mcSNKPtT9D1TgfDdrLLK0aZZBl-d5A&usqp=CAU",
+        imag:"public/haircutC.png",
         des:"services.hairStyling.description",
-        price:"services.price"
+       
     },
       {
         Sname:"services.makeup.name",
-        imag:"https://img.freepik.com/premium-vector/makeup-icon_933463-8454.jpg",
+          imag:"public/cosmetics.png",
         des:"services.makeup.description",
-        price:"services.price"
+       
     },
      {
         Sname:"services.hairProtein.name",
-        imag:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4ytB-QCeUEHs5hbBK-VJEiA7CQOpdALfTbomhQ9raCX_nLRvCrnGkpipanklCvmCShxU&usqp=CAU",
+         imag:"public/hair-care.png",
         des:"services.hairProtein.description",
-        price:"services.price"
+        
     },
       {
         Sname:"services.skinCleansing.name",
-        imag:"https://static.vecteezy.com/system/resources/previews/023/837/731/non_2x/facial-mask-icon-face-skin-care-beauty-cosmetic-vector.jpg",
+        imag:"public/face-mask.png",
         des:"services.skinCleansing.description",
-        price:"services.price"
+       
     },
         {
         Sname:"services.fillersBotox.name",
-        imag:"https://media.istockphoto.com/id/1173452677/vector/botox-and-filler.jpg?s=612x612&w=0&k=20&c=1adPKKabEMHbfYGDjhL_sv_oeA-v5uklFQXK4nlWsYA=",
+        imag:"public/lips.png",
         des:"services.fillersBotox.description",
-        price:"services.price"
+        
     },
         {
         Sname:"services.moroccanBath.name",
-        imag:"https://media.istockphoto.com/id/1393675345/vector/bucket-and-ladle-line-icon.jpg?s=612x612&w=0&k=20&c=0SaXl7IWe1VnG7P9Ho8RdleLApSgc4EGyAE0U-e_0gA=",
+        imag:"public/bath.png",
         des:"services.moroccanBath.description",
-        price:"services.price"
+        
     },
+    {
+        Sname:"services.nails.name",
+        imag:"public/nail-polish.png",
+        des:"services.nails.description",
+    },
+    {
+        Sname:"services.EyelashesAndEyebrows.name",
+        imag:"public/tool.png",
+        des:"services.EyelashesAndEyebrows.description",
+    }
 ]
 export const ourwli:ourW[]=[
     
     
     {
         id:1,
-        imagU:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoW8q6dASSiiQbskH71xW4V3k-o79_MnQPMw&s"],
+        media:{type:"image", src:["/photo_5839243317680475340_y.jpg"]},
         category:WorkCategory.HairStyling
     },
       {
         id:2,
-        imagU:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGNE-jB9KPYIzbHdM5oikDVQvinOPV1UxeBCrQvKLmQurDBJBqnLaCEmWw-5LWVSeIsxs&usqp=CAU"],
-        category:WorkCategory.FillersBotox
+      
+        media:{type:"video",src:["/document_5839243317220482469.mp4"]},
+      category:WorkCategory.HairStyling
     },
        {
-        id:4,
-       imagU:["https://img.youm7.com/ArticleImgs/2018/1/18/741780-%D9%81%D8%B1%D8%AF-%D8%A7%D9%84%D8%B4%D8%B9%D8%B1-%D8%A8%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D8%A7%D8%AA%D9%8A%D9%86.png"],
+        id:3,
+        media:{type:"video", src:["/document_5839243317220482470.mp4"]},
         category:WorkCategory.HairProtein
+    },
+      {
+        id:4,
+        media:{type:"video", src:["/document_5839243317220482471.mp4"]},
+        category:WorkCategory.moroccanBath
     },
       {
         id:5,
-        imagU:["https://static.aljamila.com/styles/1100x732_scale/public/2019/05/30/2750146-100756102.jpg"],
-        category:WorkCategory.Makeup
+        media:{type:"video", src:["/document_5839243317220482475.mp4"]},
+        category:WorkCategory.moroccanBath
     },
-      {
-        id:6,
-        imagU:["https://admin.dotcarecms.com/storage/HJH/uploads/November2023/pwRPvSUzpjy8KH9yGCeQHvfVEVCv0SaCSDV97gks.webp"],
-        category:WorkCategory.SkinCleansing
-    },
-      {
-        id:7,
-        imagU:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJTpCp81krLON_rs6xGw_nBM8qOLpOuZ-rw&s"],
-        category:WorkCategory.Makeup
-    },
-      {
-        id:8,
-       imagU:["https://www.okaz.com.sa/uploads/images/2020/09/06/1628915.jpg"],
-       category:WorkCategory.HairStyling
-    },
-       {
-        id:9,
-        imagU:["https://img.youm7.com/ArticleImgs/2018/1/18/741780-%D9%81%D8%B1%D8%AF-%D8%A7%D9%84%D8%B4%D8%B9%D8%B1-%D8%A8%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D8%A7%D8%AA%D9%8A%D9%86.png"],
-        category:WorkCategory.HairProtein
-    },
-      {
-        id:10,
-       imagU:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYJTpCp81krLON_rs6xGw_nBM8qOLpOuZ-rw&s"],
-        category:WorkCategory.Makeup
-    },
+     
+      
+      
+     
      {
-        id:11,
-        imagU:["https://browsandlips.ae/wp-content/uploads/2023/10/deep-cleansing-facial-before-after.webp"],
+        id:6,
+        media:{type:"video", src:["/document_5841495117034167453.mp4"]},
         category:WorkCategory.SkinCleansing
     },
-      {
-        id:12,
-        imagU:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW9yt6uQCrYLOk9R9vXUGsDm6H0f50E-XYEhc2c3BgzRvCQ05NiKP9PcN805JDDAvsBjg&usqp=CAU"],
-        category:WorkCategory.FillersBotox
-    },
+      
        {
-        id:13,
-         imagU:["https://i.pinimg.com/736x/74/8e/10/748e10c8953cd7d5bc641d9734893eef.jpg"],
+        id:7,
+         media:{type:"image", src:["/photo_5839243317680475335_y.jpg"]},
         category:WorkCategory.HairStyling
     },
+     {
+        id:8,
+        media:{type:"image", src:["/photo_5839243317680475339_y.jpg"]},
+        category:WorkCategory.HairStyling
+    },
+    {
+      id:9,
+       media:{type:"video", src:["/document_5841495117034167454.mp4"]},
+        category:WorkCategory.FillersBotox
+    },
+    {
+      id:10,
+       media:{type:"video", src:["/document_5839243317220482477.mp4"]},
+        category:WorkCategory.HairStyling
+    },
+    {
+      id:11,
+        media:{type:"video", src:["/document_5841495117034167455.mp4"]},
+        category:WorkCategory.EyelashesAndEyebrows
+    },
+    {
+      id:12,
+        media:{type:"video", src:["/document_5841495117034167456.mp4"]},
+        category:WorkCategory.nails
+    },
+    {
+      id:13,
+        media:{type:"video", src:["/document_5841495117034167457.mp4"]},
+        category:WorkCategory.EyelashesAndEyebrows
+    },
+    {
+      id:14,
+        media:{type:"image", src:["/photo_5841495117494160516_y.jpg"]},
+        category:WorkCategory.nails
+    }
+    ,{
+      id:15,
+        media:{type:"image", src:["/photo_5841495117494160517_y.jpg"]},
+        category:WorkCategory.Makeup
+    },
+  
+ 
 ]
 export const BookingL: BookingF[] = [
   {

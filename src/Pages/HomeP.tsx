@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "../components/image";
 import { contactl, ourwli, srvicelist } from "@/data";
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
 import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 import BookingModal from "@/components/Model/BookingModal";
@@ -15,6 +15,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useTranslation } from "react-i18next";
 import { getWorkTranslationKey } from "@/utils/translationUtils";
 
+import VideoCard from "@/components/Video/VideoCard";
+
 interface ContactFormValues {
   name: string;
   message: string;
@@ -22,8 +24,7 @@ interface ContactFormValues {
 
 const HomeP = () => {
   const { t } = useTranslation();
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+ 
   const [openBooking, setOpenBooking] = useState(false);
 
   // 🟢 react-hook-form setup
@@ -36,12 +37,7 @@ const HomeP = () => {
     resolver: yupResolver(contactS),
   });
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
+  
 
   const onSubmit = (data: ContactFormValues) => {
     const whatsappURL = `https://wa.me/905550550573?text=${encodeURIComponent(
@@ -97,22 +93,11 @@ const HomeP = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <video
-              ref={videoRef}
-              src="/v1.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-64 sm:h-80 md:h-96 lg:h-112 object-cover rounded-2xl"
-            />
-            <div className="absolute inset-0 bg-black/25 rounded-2xl"></div>
-            <Button
-              onClick={toggleMute}
-              className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-[#3d2f23] hover:bg-[#f4e3c3] hover:text-[#3d2f23] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-lg shadow-md text-sm sm:text-base"
-            >
-              {isMuted ? t("home.unmute") : t("home.mute")}
-            </Button>
+            <VideoCard id="about-video" src="/v1.mp4" className="w-full h-full" />
+             
+            
+           
+           
           </motion.div>
 
           {/* Text */}
@@ -156,12 +141,12 @@ const HomeP = () => {
               transition={{ duration: 0.6, delay: idx * 0.2 }}
             >
               <div className="w-40 h-40 sm:w-48 sm:h-48 mb-6">
-                <Image src={service.imag} alt={service.Sname} className="w-full h-full object-cover rounded-full mx-auto" />
+                <Image src={service.imag} alt={service.Sname} className="w-full h-full object-cover  mx-auto" />
               </div>
               <div>
                 <h3 className="font-semibold text-xl mb-2 text-white">{t(service.Sname)}</h3>
                 <p className="text-white/90 text-sm sm:text-base mb-3">{t(service.des)}</p>
-                <h3 className="font-semibold text-lg text-white">{t(service.price)}</h3>
+               
               </div>
             </motion.div>
           ))}
@@ -172,19 +157,42 @@ const HomeP = () => {
       <section className="py-16 px-4 sm:px-8 md:px-12 bg-[#c39a78]">
         <h2 className="text-3xl font-bold text-center mb-12 text-white">{t("home.ourWorks")}</h2>
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {ourwli.slice(0, 6).map((work, idx) => (
-            <motion.div
-              key={work.id}
-              className="bg-[#d7a863] rounded-2xl shadow-lg flex flex-col items-center text-center p-4 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-            >
-              <Image src={work.imagU[0]} alt={work.category} className="w-full h-48 sm:h-56 object-cover rounded-md mb-3" />
-              <h3 className="font-semibold text-lg text-white">{t(`ourWork.${getWorkTranslationKey(work.category)}`)}</h3>
-            </motion.div>
-          ))}
+      {ourwli.slice(0, 3).map((work, idx) => (
+  <motion.div
+    key={work.id}
+    className="bg-[#d7a863] rounded-2xl shadow-lg flex flex-col items-center text-center p-4 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+    initial={{ opacity: 0, y: 25 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, amount: 0.3 }}
+    transition={{ duration: 0.6, delay: idx * 0.2 }}
+  >
+    {work.media.type === "image" ? (
+      <Image
+        src={work.media.src[0]}
+        alt={String(work.category)}
+       
+        className="w-full h-48 sm:h-56 object-cover rounded-md mb-3"
+      />
+    ) : (
+      <>
+    <div className="relative w-full h-full aspect-video rounded-2xl overflow-hidden shadow-lg">
+  <VideoCard
+    id={`work-${work.id}`}
+    src={work.media.src[0]}
+    className="w-full h-full object-cover"
+  />
+</div>
+            </>
+
+      
+    )}
+    
+
+    <h3 className="font-semibold text-lg text-white">
+      {t(`ourWork.${getWorkTranslationKey(work.category)}`)}
+    </h3>
+  </motion.div>
+))}
         </div>
         <div className="flex justify-center mt-8">
           <Link to="/Home/work">

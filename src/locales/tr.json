@@ -71,8 +71,12 @@
     "hairProtein": "Saç Proteini Tedavisi",
     "skinCleansing": "Cilt Temizleme",
     "fillersBotox": "Dolgu ve Botoks",
+    "moroccanBath": "Fas Hamamı",
     "prev": "Önceki",
-    "next": "Sonraki"
+    "next": "Sonraki",
+    "noWorks": "Çalışmamız bulunmamaktadır",
+    "nails": "Tırnaklar",
+      "EyelashesAndEyebrows": "Kirpikler ve Kaşlar"
   },
   "services": {
     "hairStyling": {
@@ -98,7 +102,15 @@
     "moroccanBath": {
       "name": "Fas Hamamı",
       "description": "Derin rahatlama ve parlak cilt deneyimi yaşayın geleneksel Fas hamamımızla — temizlik, peeling ve yenilenmenin mükemmel karışımı."
+    }
+    ,"nails": {
+      "name": "Tırnaklar",
+      "description": "Profesyonel manikür ve pedikür hizmetlerimizle tırnaklarınıza bakım yapın."
     },
-    "price": "300TL"
+    "EyelashesAndEyebrows": {
+      "name": "Kirpikler ve Kaşlar",
+      "description": "Dolgun, doğal görünümlü kirpikler ve mükemmel şekillendirilmiş kaşlarla büyüleyici bir görünüm elde edin. Hizmetlerimiz, her duruma uygun profesyonel bir dokunuşla eksiksiz güzellik ve kalıcı sonuçlar sunar."
+      
+    }
   }
 }

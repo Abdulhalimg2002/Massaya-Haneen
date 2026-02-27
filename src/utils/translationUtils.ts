@@ -7,5 +7,8 @@ export const getWorkTranslationKey = (category: WorkCategory) => {
     case WorkCategory.HairProtein: return "hairProtein";
     case WorkCategory.SkinCleansing: return "skinCleansing";
     case WorkCategory.FillersBotox: return "fillersBotox";
+    case WorkCategory.moroccanBath: return "moroccanBath";
+    case WorkCategory.nails: return "nails";
+    case WorkCategory.EyelashesAndEyebrows: return "EyelashesAndEyebrows";
   }
 };

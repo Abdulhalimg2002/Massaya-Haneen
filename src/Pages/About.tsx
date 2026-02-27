@@ -1,8 +1,9 @@
 import { motion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useRef, useState } from "react";
+import {  useState } from "react";
 import { useTranslation } from "react-i18next";
 import BookingModal from "@/components/Model/BookingModal";
+import VideoCard from "@/components/Video/VideoCard";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
@@ -15,17 +16,11 @@ const fadeUp: Variants = {
 };
 
 const About = () => {
-  const [isMuted, setIsMuted] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
+ 
   const { t } = useTranslation();
    const [openBooking, setOpenBooking] = useState(false);
 
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
+  
 
   return (
     <div className="min-h-screen px-4 sm:px-6 md:px-12 pt-32 pb-16 bg-[#c39a78] text-white overflow-hidden">
@@ -52,22 +47,7 @@ const About = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <video
-            ref={videoRef}
-            src="/v1.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full max-h-80 sm:max-h-96 md:max-h-112 object-cover rounded-2xl"
-          />
-          <div className="absolute inset-0 bg-black/25 rounded-2xl"></div>
-          <Button
-            onClick={toggleMute}
-            className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4 bg-[#3d2f23] hover:bg-[#f4e3c3] hover:text-[#3d2f23] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-lg shadow-md text-sm sm:text-base"
-          >
-            {isMuted ? t("about.unmute") : t("about.mute")}
-          </Button>
+         <VideoCard id="about-video" src="/v1.mp4" className="w-full h-full" />
         </motion.div>
 
         {/* Text Section */}

@@ -6,6 +6,7 @@ import { WorkCategory } from "@/interface";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { getWorkTranslationKey } from "@/utils/translationUtils";
+import VideoCard from "@/components/Video/VideoCard";
 
 const OurW = () => {
   const [selectedCategory, setSelectedCategory] = useState<WorkCategory | "All">("All");
@@ -28,7 +29,7 @@ const OurW = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#c39a78] text-white px-4 sm:px-8 md:px-12 py-16">
+    <div className="min-h-screen bg-[#c39a78] text-white mt-3 px-4 sm:px-8 md:px-12 py-16">
       <motion.h1
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8"
         initial={{ opacity: 0, y: -30 }}
@@ -45,7 +46,7 @@ const OurW = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <button
+        <Button
           onClick={() => handleCategoryChange("All")}
           className={`px-4 py-2 rounded-full font-semibold transition-all ${
             selectedCategory === "All"
@@ -54,10 +55,10 @@ const OurW = () => {
           }`}
         >
           {t("ourWork.all")}
-        </button>
+        </Button>
 
         {Object.values(WorkCategory).map((cat) => (
-          <button
+          <Button
             key={cat}
             onClick={() => handleCategoryChange(cat)}
             className={`px-4 py-2 rounded-full font-semibold transition-all ${
@@ -67,46 +68,76 @@ const OurW = () => {
             }`}
           >
             {t(`ourWork.${getWorkTranslationKey(cat)}`)}
-          </button>
+          </Button>
         ))}
       </motion.div>
 
       {/* شبكة عرض الأعمال */}
       <AnimatePresence mode="wait">
-        <motion.div
-          key={selectedCategory + currentPage}
-          className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          {currentWorks.map((work, i) => (
-            <motion.div
-              key={work.id}
-              className="bg-[#d7a863] rounded-2xl shadow-lg flex flex-col items-center text-center p-4 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-            >
-              {work.imagU.map((img, idx) => (
-                <Image
-                  key={idx}
-                  src={img}
-                  alt={work.category}
-                  className="w-full h-64 object-cover rounded-xl"
-                />
-              ))}
-              <div className="p-4 text-center">
-                <h3 className="font-semibold text-lg">{t(`ourWork.${getWorkTranslationKey(work.category)}`)}</h3>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        {currentWorks.length === 0 ? (
+          <motion.div
+            className="text-center text-xl sm:text-2xl font-semibold mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {t("ourWork.noWorks")}
+          </motion.div>
+        ) : (
+          <motion.div
+            key={selectedCategory + currentPage}
+            className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+          >
+            {currentWorks.map((work, i) => (
+              <motion.div
+                key={work.id}
+                className="bg-[#d7a863] rounded-2xl shadow-lg flex flex-col items-center text-center p-4 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                {work.media.type === "image" ? (
+                  work.media.src.map((img, idx) => (
+                    <Image
+                      key={idx}
+                      src={img}
+                      alt={work.category}
+                      className="w-full h-64 object-cover rounded-xl"
+                    />
+                  ))
+                ) : (
+                  work.media.src.map((vid, idx) => (
+                    <div
+                      key={idx}
+                      className="relative w-full h-full aspect-video rounded-2xl overflow-hidden shadow-lg"
+                    >
+                      <VideoCard
+                        id={`work-${vid}`}
+                        src={vid}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))
+                )}
+
+                <div className="p-4 text-center">
+                  <h3 className="font-semibold text-lg">
+                    {t(`ourWork.${getWorkTranslationKey(work.category)}`)}
+                  </h3>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
       </AnimatePresence>
 
       {/* أزرار التنقل بين الصفحات */}
-      {totalPages > 1 && (
+      {totalPages > 1 && currentWorks.length > 0 && (
         <motion.div
           className="flex justify-center items-center gap-2 mt-12"
           initial={{ opacity: 0 }}
@@ -122,7 +153,7 @@ const OurW = () => {
           </Button>
 
           {[...Array(totalPages)].map((_, i) => (
-            <button
+            <Button
               key={i}
               onClick={() => setCurrentPage(i + 1)}
               className={`px-3 py-1 rounded-lg font-semibold transition-all ${
@@ -132,7 +163,7 @@ const OurW = () => {
               }`}
             >
               {i + 1}
-            </button>
+            </Button>
           ))}
 
           <Button
