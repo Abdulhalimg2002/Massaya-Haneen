@@ -130,8 +130,13 @@ export const ourwli:ourW[]=[
     ,{
       id:15,
         media:{type:"image", src:["/photo_5841495117494160517_y.jpg"]},
-        category:WorkCategory.Makeup
+        category:WorkCategory.nails
     },
+    {
+      id:16,
+        media:{type:"image", src:["/best-everyday-makeup-styles-for-work-and-occasions-1-1024x694.jpg"]},
+        category:WorkCategory.Makeup
+    }
   
  
 ]
