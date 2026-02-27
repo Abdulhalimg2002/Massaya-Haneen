@@ -15,7 +15,7 @@ export const srvicelist:Srvice[]=[
     },
      {
         Sname:"services.hairProtein.name",
-         imag:"public/hair-care.png",
+         imag:"/hair-care.png",
         des:"services.hairProtein.description",
         
     },
