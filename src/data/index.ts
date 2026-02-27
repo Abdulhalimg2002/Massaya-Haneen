@@ -3,13 +3,13 @@ import { WorkCategory, type BookingF, type contactF, type ourW, type Srvice } fr
 export const srvicelist:Srvice[]=[
     {
         Sname:"services.hairStyling.name",
-        imag:"public/haircutC.png",
+        imag:"/haircutC.png",
         des:"services.hairStyling.description",
        
     },
       {
         Sname:"services.makeup.name",
-          imag:"public/cosmetics.png",
+          imag:"/cosmetics.png",
         des:"services.makeup.description",
        
     },
@@ -21,30 +21,30 @@ export const srvicelist:Srvice[]=[
     },
       {
         Sname:"services.skinCleansing.name",
-        imag:"public/face-mask.png",
+        imag:"/face-mask.png",
         des:"services.skinCleansing.description",
        
     },
         {
         Sname:"services.fillersBotox.name",
-        imag:"public/lips.png",
+        imag:"/lips.png",
         des:"services.fillersBotox.description",
         
     },
         {
         Sname:"services.moroccanBath.name",
-        imag:"public/bath.png",
+        imag:"/bath.png",
         des:"services.moroccanBath.description",
         
     },
     {
         Sname:"services.nails.name",
-        imag:"public/nail-polish.png",
+        imag:"/nail-polish.png",
         des:"services.nails.description",
     },
     {
         Sname:"services.EyelashesAndEyebrows.name",
-        imag:"public/tool.png",
+        imag:"/tool.png",
         des:"services.EyelashesAndEyebrows.description",
     }
 ]
